@@ -56,6 +56,7 @@ public class ProcessStringInput {
 
 		// Split token to get the tokens by eliminating whitespace
 		inputStringValue = inputStringValue.toLowerCase();
+		checkCharacter = checkCharacter.toLowerCase();
 		StringBuffer buffer = new StringBuffer();
 		StringBuffer outputbuffer = new StringBuffer();
 		String[] tokens = inputStringValue.split(" ");

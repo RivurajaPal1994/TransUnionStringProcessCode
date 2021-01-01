@@ -164,6 +164,26 @@ public class ProcessStringInputTest {
 		ProcessStringInput service = new ProcessStringInput();
 		Assert.assertEquals(1, service.calculateMaximumCharacterDistance("a  b  a   ", "a"));
 	}
+	
+	/**
+	 * Input1 is valid with upper case and lower case occurrences of Input2
+	 */
+	@Test
+	public void checkCasingInput1()
+	{
+		ProcessStringInput service = new ProcessStringInput();
+		Assert.assertEquals(3, service.calculateMaximumCharacterDistance("My name is Rivuraja Pal", "m"));
+	}
+	
+	/**
+	 * Input1 is valid Input2 is uppercase
+	 */
+	@Test
+	public void checkCasingInput2()
+	{
+		ProcessStringInput service = new ProcessStringInput();
+		Assert.assertEquals(3, service.calculateMaximumCharacterDistance("My name is Rivuraja Pal", "M"));
+	}
 
 
 }
