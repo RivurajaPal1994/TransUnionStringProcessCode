@@ -69,24 +69,24 @@ public class ProcessStringInput {
 		if (output.length < 1)
 			return -1;
 
+		// calculate the characters after first occurrence and before last occurrence
+		// for input data with only two occurrences at start and end --> a b a
 		if (output.length == 2) {
 			return output[1].length();
 		}
 
+		// for input data ending with character without any successor characters
 		if (temp.lastIndexOf(checkCharacter) == temp.length() - 1) {
 			for (int i = 1; i < output.length; i++) {
 				outputbuffer.append(output[i]);
 			}
-		}
-		else
-		{
-			for (int i = 1; i < output.length-1; i++) {
+		} else {
+			// successor characters present resulting in additional array size
+			for (int i = 1; i < output.length - 1; i++) {
 				outputbuffer.append(output[i]);
-			}			
+			}
 		}
 
-		// calculate the characters after first occurrence and before last occurrence
-		
 		if (outputbuffer.length() > 0)
 			return outputbuffer.length();
 		else
