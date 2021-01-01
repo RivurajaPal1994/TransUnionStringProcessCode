@@ -92,7 +92,17 @@ public class ProcessStringInputTest {
 	public void checkInput1EndingWithInput2()
 	{
 		ProcessStringInput service = new ProcessStringInput();
-		Assert.assertEquals(4, service.calculateMaximumCharacterDistance("b cdcba b", "b"));
+		Assert.assertEquals(-1, service.calculateMaximumCharacterDistance(" cdca b", "b"));
+	}
+	
+	/**
+	 * Input1 is valid with last characted as Input2
+	 */
+	@Test
+	public void checkInput1StartingAndEndingWithInput2()
+	{
+		ProcessStringInput service = new ProcessStringInput();
+		Assert.assertEquals(4, service.calculateMaximumCharacterDistance("b cdca b", "b"));
 	}
 	
 	/**
