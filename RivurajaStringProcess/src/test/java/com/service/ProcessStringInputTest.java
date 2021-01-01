@@ -76,6 +76,16 @@ public class ProcessStringInputTest {
 	}
 	
 	/**
+	 * Input1 is valid with last characted as Input2
+	 */
+	@Test
+	public void checkInput1EndingWithInput2()
+	{
+		ProcessStringInput service = new ProcessStringInput();
+		Assert.assertEquals(4, service.calculateMaximumCharacterDistance("b cdcba b", "b"));
+	}
+	
+	/**
 	 * Input1 is valid and Input2 is valid and special characters
 	 */
 	@Test
@@ -99,10 +109,41 @@ public class ProcessStringInputTest {
 	 * Input1 is valid and Input2 is spaces
 	 */
 	@Test
-	public void checkSpaces()
+	public void checkSpacesInput2()
 	{
 		ProcessStringInput service = new ProcessStringInput();
 		Assert.assertEquals(-1, service.calculateMaximumCharacterDistance("My name is Rivuraja Pal and is my number", " "));
 	}
+	
+	/**
+	 * Input1 is valid with spaces and Input2 is valid and present
+	 */
+	@Test
+	public void checkSpacesInput1()
+	{
+		ProcessStringInput service = new ProcessStringInput();
+		Assert.assertEquals(1, service.calculateMaximumCharacterDistance("a  b  a", "a"));
+	}
+	
+	/**
+	 * Input1 is valid starts with spaces and Input2 is valid and present
+	 */
+	@Test
+	public void checkSpacesFrontInput1()
+	{
+		ProcessStringInput service = new ProcessStringInput();
+		Assert.assertEquals(1, service.calculateMaximumCharacterDistance("   a  b  a", "a"));
+	}
+	
+	/**
+	 * Input1 is valid ends with spaces and Input2 is valid and present
+	 */
+	@Test
+	public void checkSpacesEndInput1()
+	{
+		ProcessStringInput service = new ProcessStringInput();
+		Assert.assertEquals(1, service.calculateMaximumCharacterDistance("a  b  a   ", "a"));
+	}
+
 
 }
