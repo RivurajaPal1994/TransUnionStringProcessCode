@@ -146,6 +146,26 @@ public class ProcessJackSparrowJumpTest {
 		String input4 = "{-5}";
 		Assert.assertEquals(-1, object.processJumpCount(input1, input2, input3, input4));
 	}
+	
+	@Test
+	public void checkSpecialCharacterInput4() {
+		ProcessJackSparrowJump object = new ProcessJackSparrowJump();
+		String input1 = "4";
+		String input2 = "1";
+		String input3 = "1";
+		String input4 = "{5,%}";
+		Assert.assertEquals(-1, object.processJumpCount(input1, input2, input3, input4));
+	}
+	
+	@Test
+	public void checkAlphanumericInput4() {
+		ProcessJackSparrowJump object = new ProcessJackSparrowJump();
+		String input1 = "4";
+		String input2 = "2";
+		String input3 = "1";
+		String input4 = "{5,a}";
+		Assert.assertEquals(-1, object.processJumpCount(input1, input2, input3, input4));
+	}
 
 	/**
 	 * To validate that No of Walls value cannot be less than the size of list of
