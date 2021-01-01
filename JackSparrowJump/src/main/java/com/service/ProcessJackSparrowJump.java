@@ -13,6 +13,9 @@ public class ProcessJackSparrowJump {
 	private String input4;
 	private int output;
 
+	/**
+	 * Runner call method to ask user inputs
+	 */
 	public void execute() {
 		// read data from user
 		try {
@@ -36,6 +39,18 @@ public class ProcessJackSparrowJump {
 		System.out.println("Output: "+output);
 	}
 
+	/**
+	 * Business Logic for Jack Sparrow Jump 
+	 * @param ClimbUp : String
+	 * @param ClimbDown : String
+	 * @param NoOfWalls : String
+	 * @param WallHeights : String
+	 * @return output : int
+	 * 
+	 * Be sure to pass the WallHeights array as a string
+	 * valid : "{10,2,14}"
+	 * Invalid : "10,2,14"
+	 */
 	public int processJumpCount(String input1, String input2, String input3, String input4) {
 
 		int climbUp;
@@ -83,6 +98,13 @@ public class ProcessJackSparrowJump {
 
 	}
 
+	/**
+	 * Validates whether the WallHeights are integers and elements equal to NoOfWall
+	 * @param noOfWalls : integer
+	 * @param WallHeights : String
+	 * @return integer array of WallHeights
+	 * @throws CustomException
+	 */
 	private int[] validateReturnWallData(int noOfWalls, String input) throws CustomException {
 		int[] heights = new int[noOfWalls];
 		if (input == null || noOfWalls < 0)
@@ -101,11 +123,17 @@ public class ProcessJackSparrowJump {
 			} else
 				throw new NumberFormatException();
 		} catch (NumberFormatException e) {
-			throw new CustomException("Invalid data provided as input4 (zero and negatives not allowed) " + input);
+			throw new CustomException("Invalid data provided as input4 (zero/-ve/alpha not allowed) " + input);
 		}
 
 	}
 
+	/**
+	 * Validates whether the input type is valid int value and returns the converted integer
+	 * @param input : String
+	 * @return integer
+	 * @throws CustomException
+	 */
 	private int validateReturnIntegerInput(String input) throws CustomException {
 		if (input == null)
 			throw new CustomException("Null Value passed as Input. Please pass proper data");
@@ -116,7 +144,7 @@ public class ProcessJackSparrowJump {
 				throw new NumberFormatException();
 
 		} catch (NumberFormatException e) {
-			throw new CustomException("Invalid value sent (zero and negatives not valid) " + input);
+			throw new CustomException("Invalid value sent (zero/-ve/alpha not valid) " + input);
 		}
 
 	}
