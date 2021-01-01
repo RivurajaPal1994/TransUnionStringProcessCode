@@ -71,7 +71,7 @@ public class ProcessStringInput {
 
 		// calculate the characters after first occurrence and before last occurrence
 		// for input data with only two occurrences at start and end --> a b a
-		if (output.length == 2) {
+		if (output.length == 2 && temp.lastIndexOf(checkCharacter) == temp.length() - 1) {
 			return output[1].length();
 		}
 
