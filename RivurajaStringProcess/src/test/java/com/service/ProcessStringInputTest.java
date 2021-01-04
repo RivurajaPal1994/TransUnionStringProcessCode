@@ -17,7 +17,7 @@ public class ProcessStringInputTest {
 	public void checkNullInput2()
 	{
 		ProcessStringInput service = new ProcessStringInput();
-		Assert.assertEquals(-1, service.calculateMaximumCharacterDistance(null, null));
+		Assert.assertEquals(-1, service.calculateMaximumCharacterDistance("ABCD", null));
 	}
 	
 	@Test
